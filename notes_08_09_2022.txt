@@ -199,6 +199,62 @@ for each is used arrays or with collections.
 -------------------------------------------
 javac Greetings.java
 java Greetings Diptish Avinash Suresh
+-------------------------------------------------------------------------------------------------------
+We need to design a class called Student with student's roll,name , marks in 3 subjects and grade.
+Grade will be decided based on the average score. If the average score is more than 80 , then the grade will be A . If the grade is between 70 and 80 the grade will be B otherwise. 
+One more class is required to have main method. Let the class name be StudentMain.
+----------------------------------------------------------------------------------------------
+String is a predefined class in Java API ( Application Programming Interface). 
 
+So what is API? 
+It is a library of java classes and iterfaces.
+
+
+int num=10;
+// 10 int literal/constant
+
+char ch='A';
+// A is a char literal/constant
+
+String str="welcome";
+// welcome is s String literal/constant
+
+String is an immutable object. Which means once crated, we cannot make a change in the existing object.
+With every change it creates a new object.
+
+String s1="hello";
+Sting s2="world";
+String s3=s1.concat(s2); 
+
+IT CREATES A NEW STRING helloworld. 
+--------------------------------------------------------------------------------------------
+
+== =====> comparing whether two reference variables are pointing to the same object or not
+
+equals====> checks whether the content of two objects are same or not.
+
+
+String str1="hello";
+String str2="hello";
+
+In this case both str1 and str2 are pointing to the same String literal hello
+
+str1==str2    ===> true
+str1.equals(str2) ====> true
+------------------------------------------------------------------------------------------------
+
+
+
+String str1=new String("hello");     str1===> 34567
+String str2=new String("hello");     str2===> 56789
+str1==str2======> false
+str1.equals(str2) =====> true   
+------------------------------------------------------------------------------------------------------String str1="hello";
+String str2="Hello";
+str1==str2; false
+str1.equals(str2); false
+
+str1.equalsIgnoreCase(str2); // true
+ -------------------------------------------------------------------------------------------------   
 
 
