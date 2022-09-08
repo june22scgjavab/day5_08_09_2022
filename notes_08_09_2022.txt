@@ -1,0 +1,204 @@
+   My File name is Hello.java and we have two classes Hello and Hi. So
+  what will be the output.
+  
+  public class Hello{
+
+   void message(){
+    System.out.println("Hello");
+   }
+
+  }
+
+ public class Hi {
+   public static void main(String[] args){
+    Hello hello=new Hello();
+    hello.message();
+   }
+ } 
+
+Compilation error , as we cannot have two public classes in the same file.
+-----------------------------------------------------------------------------------------------
+Hello.java
+
+  public class Hello{
+
+   void message(){
+    System.out.println("Hello");
+   }
+
+  }
+
+ class Hi {
+   public static void main(String[] args){
+    Hello hello=new Hello();
+    hello.message();
+   }
+ } 
+
+------------------------------------------------------------------------------------------------
+
+public class Data{
+   private int i;
+
+   public static void main(String args[]){
+     
+        System.out.println(i);
+
+   }
+}
+[ The variable i is not static and main is static so we cannot access non-static member from 
+static method or block]
+-----------------------------------------------------------------------------------------------------
+[ The way out to access the non static member i is to create an object of Data class and access i.
+
+public class Data{
+   private int i;
+
+   public static void main(String args[]){
+        Data data=new Data();
+        System.out.println(data.i);
+
+   }
+}
+The above code wil display 0.
+--------------------------------------------------------------------------------------------
+public class Data{
+   private int i;  // instance variable i
+
+   public static void main(String args[]){
+        int k;   // local variable k and local variable should be initialised before access
+        Data data=new Data();
+        System.out.println(data.i);
+        System.out.println(k);
+    }
+}
+[ The above code is having error. k needs to be initialised. i is an instance variable and k is 
+a local variable. Instance variables are initialised with default constructors. That is the reason
+we dont require initialising the instance variables explicitly but if the variables are local like k,
+in that case we need to initialise the variable before the access. ]
+--------------------------------------------------------------------------------------------------
+
+  package mypack1;
+
+  public class Data{
+    int i;
+    String name;
+
+  }
+
+  package mypack2;
+  import mypack1.Data;
+  public classs DataMain{
+    public static void main(String args[]){
+        Data data=new Data():
+        System.out.println(data.i);
+        System.out.println(data.name);
+     }
+   }
+[ Compilation error as Data is in different package and i and name are default members . Default members are not accessible outside the package. ]
+---------------------------------------------------------------------------------------------------
+  
+package mypack1;
+ public class Data{
+    private int i;
+    private String name;
+
+  }
+
+  package mypack2;
+  import mypack1.Data;
+  public classs DataMain{
+    public static void main(String args[]){
+        Data data=new Data():
+        System.out.println(data.i);
+        System.out.println(data.name);
+     }
+   }
+   }
+[ Compilation error as Data is in different package and i and name are private members . Private members are not accessible outside the package. ]
+------------------------------------------------------------------------------------------------------package mypack1;
+ public class Data{
+    public int i;
+    public String name;
+
+  }
+
+  package mypack2;
+  import mypack1.Data;
+  public classs DataMain{
+    public static void main(String args[]){
+        Data data=new Data():
+        System.out.println(data.i);
+        System.out.println(data.name);
+     }
+   }
+   }
+
+The output is 0 and null
+-----------------------------------------------------------------------------------------------
+
+package mypack1;
+ public class Data{
+    private int i;
+    private String name;
+
+    public void display(){
+    System.out.println(i);
+    System.out.println(name);
+    }
+
+  }
+
+  package mypack2;
+  import mypack1.Data;
+  public classs DataMain{
+    public static void main(String args[]){
+        Data data=new Data():
+        data.display();    // 0 and null
+     }
+   }
+   }
+So private members cannot be accessed by other class but we can make a public method through which 
+we can display/access the private members]
+---------------------------------------------------------------------------------------------------
+  public class Data{
+   public void display(){
+    private int i=10;
+    System.out.println(i);
+   }
+
+   public static void main(String args[]){
+     Data data=new Data();
+     data.display();
+   }
+ }
+ [ The local variables cannot have access modifiers. We cannot write i with access modifier]  
+------------------------------------------------------------------------------------------------------
+  
+  int numbers[]=new int[5];
+   OR
+  int numbers[];   // We are declaring an array of type int.
+  numbers=new int[5]; // 5 is the length/size of the array.
+  OR
+  int[] numbers=new int[5]; 
+-------------------------------------------------------------------------------------------
+ 
+for each is used arrays or with collections.
+
+   int numbers[]=new int[3];
+  for(int num : numbers){
+    System.out.println(num);
+   }
+--------------------------------------------------------------
+ int numbers[][]=new int[3][4];
+ for(int nums[] : numbers) {
+   for(int n : nums){
+    System.out.print(n);
+   }
+ }
+-------------------------------------------
+javac Greetings.java
+java Greetings Diptish Avinash Suresh
+
+
+
