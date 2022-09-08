@@ -256,5 +256,40 @@ str1.equals(str2); false
 
 str1.equalsIgnoreCase(str2); // true
  -------------------------------------------------------------------------------------------------   
+Validate a name and check whether it contains all the characters as alphabet.
 
+  public class ValidateName{
 
+    public static boolean validName(String name){
+      return false;
+     }  
+    public static void main(String args[]){
+      String name="Sudesh";
+      if(validName(name)==true){
+         System.out.println("The name is valid");
+      }
+      else{
+         System.out.println("The name is invalid");
+      }
+    }
+ }
+-----------------------------------------------------------------------------------------------------
+
+Validate the mobile number and check whether it contains all the characters as digit.
+
+  public class ValidateMobileNumber{
+
+    public static boolean validMobileNumber(String mobileNumber){
+      return false;
+     }  
+    public static void main(String args[]){
+      String number="9823423190";
+      if(validMobileNumber(number)==true){
+         System.out.println("The number is valid");
+      }
+      else{
+         System.out.println("The number is invalid");
+      }
+    }
+ }
+-------------------------------------------------------------------------------------------------
